@@ -1,0 +1,15 @@
+<div class="search">
+
+  Movie Title:
+  <input [(ngModel)]="title" placeholder="name" class="form-inline my-2 my-lg-0" />
+  <button (click)="getMovie(title)" class="btn btn-primary btm-block">Search</button>
+
+  <section class="d-flex">
+    <div *ngFor="let movie of movies" class="card" style="width: 250px ; height: 500px">
+      <p>{{movie.Title}}</p>
+      <p>Year of release: {{movie.Year}}</p>
+      <img class="card-img-top img-fluid" src="{{ movie.Poster }}" alt="movie poster" width=80px height=50px>
+        <button class="btn btn-primary" (click)="addMovie(movie)"> Add Movie</button>
+    </div>
+  </section>
+</div>
